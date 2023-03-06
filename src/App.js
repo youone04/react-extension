@@ -11,7 +11,14 @@ function App() {
         {
           target: {tabId: activeTabId},
           //function: ()=>alert("React chrome extension alert")
-          function: ()=>{document.body.innerHTML = "Hello World"}
+          function: ()=>{
+            // document.body.innerHTML = "Hello World"
+            Array.from(document.querySelectorAll("img"))
+            .forEach(function(val) {
+                // val.style.display = 'none';
+                val.style.filter = "blur(4px)";
+});
+          }
         }
       )
     })
